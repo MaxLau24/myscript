@@ -1,3 +1,7 @@
+/*
+README：https://github.com/yichahucha/surge/tree/master
+ */
+
 const path1 = "serverConfig";
 const path2 = "wareBusiness";
 const console_log = false;
@@ -18,7 +22,7 @@ if (url.indexOf(path2) != -1) {
     const floors = obj.floors;
     const commodity_info = floors[floors.length - 1];
     const shareUrl = commodity_info.data.property.shareUrl;
-    request_hsitory_price(shareUrl, function (data) {
+    request_history_price(shareUrl, function (data) {
         if (data) {
             const lowerword = adword_obj();
             lowerword.data.ad.textColor = "#fe0000";
@@ -58,7 +62,6 @@ if (url.indexOf(path2) != -1) {
 function history_price_msg(data) {
     const rex_match = /\[.*?\]/g;
     const rex_exec = /\[(.*),(.*),"(.*)"\]/;
-    const list = data.jiagequshiyh.match(rex_match);
     const lower = data.lowerPriceyh;
     const lower_date = changeDateFormat(data.lowerDateyh);
     const lower_msg = "‼️ 历史最低到手价:   ¥" + String(lower) + "   " + lower_date
@@ -72,7 +75,9 @@ function history_price_msg(data) {
     let history_price_msg = "";
     let start_date = "";
     let end_date = "";
-    list.reverse().forEach((item, index) => {
+    let list = data.jiagequshiyh.match(rex_match);
+    list = list.reverse().slice(0, 365);
+    list.forEach((item, index) => {
         if (item.length > 0) {
             const result = rex_exec.exec(item);
             const dateUTC = new Date(eval(result[1]));
@@ -93,12 +98,13 @@ function history_price_msg(data) {
             history_price_msg += msg;
         }
     });
-    const date_range_msg = `(${start_date} ~ ${end_date})`;
+    // const date_range_msg = `(${start_date} ~ ${end_date})`;
+    const date_range_msg = `(最近一年)`;
     const price_msg = title_msg + "  " + date_range_msg + "\n\n" + title_table_msg + "\n" + history_price_msg;
     return [lower_price_msg, price_msg];
 }
 
-function request_hsitory_price(share_url, callback) {
+function request_history_price(share_url, callback) {
     const options = {
         method: "POST",
         url: "https://apapia-history.manmanbuy.com/ChromeWidgetServices/WidgetServices.ashx",
