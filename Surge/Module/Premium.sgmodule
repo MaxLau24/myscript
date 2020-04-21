@@ -2,7 +2,7 @@
 #!desc= Rewrite and hostname of Premium
 #!system=ios
 
-[URL Rewrite]
+[Script]
 
 # > 微信公众号去广告
 Wechat.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/MaxLau24/myscript/master/File/N/Wechat.js,pattern=^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad,type=http-response
