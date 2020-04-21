@@ -1,0 +1,52 @@
+#!name= Premium
+#!desc= Rewrite and hostname of Premium
+#!system=ios
+
+[URL Rewrite]
+
+# > 微信公众号去广告
+Wechat.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/MaxLau24/myscript/master/File/N/Wechat.js,pattern=^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad,type=http-response
+# > 哔哩哔哩去广告7合1
+Bilibili.js = requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/MaxLau24/myscript/master/File/N/Bilibili.js,pattern=^https?://ap(i|p).bilibili.com/x/(resource/show/tab|v2/(reply/main|view/material|account/mine|view|feed/index|show/popular/index|rank))?access_key,type=http-response
+# > 抖音去水印
+Aweme1.js = script-path=https://raw.githubusercontent.com/MaxLau24/myscript/master/File/N/Aweme1.js,pattern=^https:\/\/.*\.amemv\.com\/aweme\/v.*\/(feed|post),type=http-request
+Aweme1.js = requires-body=true,script-path=https://raw.githubusercontent.com/MaxLau24/myscript/master/File/N/Aweme1.js,pattern=^https:\/\/.*\.amemv\.com\/aweme\/v.*\/(feed|post),type=http-response
+# > 酷我音乐 vip+下载
+Kuwo.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/MaxLau24/myscript/master/File/N/Kuwo.js,pattern=^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/user\/vip|vip\/spi/mservice),type=http-response
+KuWoMusicDownload.js = script-path=https://raw.githubusercontent.com/MaxLau24/myscript/master/File/N/KuWoMusicDownload.js,pattern=^https?:\/\/musicpay\.kuwo.cn\/music\.pay\?uid=\d+,type=http-request
+# > 哔哩哔哩强制1080P视频播放
+bilifj.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/MaxLau24/myscript/master/File/N/bilifj.js,pattern=^https?:\/\/api\.bilibili\.com\/pgc\/player\/api\/playurl,type=http-response
+# > VSCO vip
+vsco.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/MaxLau24/myscript/master/File/N/vsco.js,pattern=^https?:\/\/vsco\.co\/api\/subscriptions\/2.1\/user-subscriptions\/,type=http-response
+# > 本地WPS vip
+Wps.js = requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/MaxLau24/myscript/master/File/N/Wps.js,pattern=^https?:\/\/account\.wps\.cn\/api\/users,type=http-response
+# > Termius SSH客户端 vip
+Termius.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/MaxLau24/myscript/master/File/N/Termius.js,script-update-interval=0,pattern=https:\/\/api\.termius\.com\/api\/v3\/bulk\/account\/,type=http-response
+# > VUE pro
+VUE.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/MaxLau24/myscript/master/File/N/VUE.js,pattern=https:\/\/api\.vuevideo\.net\/api\/v1\/(users\/.+\/profile|subtitle\/prepare),type=http-response
+# > Picsart vip
+PicsArt.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/MaxLau24/myscript/master/File/N/PicsArt.js,pattern=https:\/\/api\.(picsart|meiease)\.c(n|om)\/users\/show\/me\.json,type=http-response
+# > 人人视频可看带勋章视频+AI原画
+rrtv.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/MaxLau24/myscript/master/File/N/rrtv.js,script-update-interval=0,pattern=^https:\/\/api\.rr\.tv(\/user\/privilege\/list|\/ad\/getAll|\/rrtv-video\/v4plus\/season\/detail),type=http-response
+# > 彩云小译 vip
+cyxy.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/MaxLau24/myscript/master/File/N/cyxy.js,pattern=^https:\/\/api\.interpreter\.caiyunai\.com\/v1\/user,type=http-response
+# > Bear pro
+// bear.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/MaxLau24/myscript/master/File/N/bear.js,pattern=^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt,type=http-response
+# > Draft pro
+// draft.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/MaxLau24/myscript/master/File/Y/draft.js,pattern=^https:\/\/backend\.getdrafts\.com\/api\/.*\/verification*,type=http-response
+# > Lightroom vip
+Lightroom.js = requires-body=1,script-path=https://raw.githubusercontent.com/MaxLau24/myscript/master/File/Y/Lightroom.js,pattern=^https:\/\/photos\.adobe\.io\/v2\/accounts,type=http-response
+# > 轻颜 vip
+ulike.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/MaxLau24/myscript/master/File/Y/ulike.js,pattern=^https:\/\/commerce-.*api\.faceu\.mobi\/commerce\/v1\/subscription\/user_info,type=http-response
+# > Adguard pro
+Adguard.rsp = requires-body=1,script-path=https://raw.githubusercontent.com/langkhach270389/Scripting/master/Adguard.rsp,pattern=^https:\/\/mobile-api\.adguard\.com\/api\/1\.0\/ios_validate_receipt$,type=http-request
+# > Document 破解内购功能
+documents.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/MaxLau24/myscript/master/File/Y/documents.js,pattern=^https:\/\/license\.pdfexpert\.com\/api\/.*\/documents\/subscription\/(refresh$|check$),type=http-response
+# > 本地有道云笔记 vip
+ydybj.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Alex0510/surge/master/Script/ydybj.js,script-update-interval=0,pattern=https://note.youdao.com/yws/(mapi/payment|api/self),type=http-response
+# > 白描 vip
+baimiao.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/MaxLau24/myscript/master/File/N/baimiao.js,script-update-interval=0,pattern=^https?:\/\/baimiao\.uzero\.cn\/api\/v\d\.user\/appLaunchWithUser$,type=http-response
+
+
+[MITM]
+hostname = %APPEND% mp.weixin.qq.com, api.bilibili.com, app.bilibili.com, *.amemv.com, *.snssdk.com, vip1.kuwo.cn, vsco.co, account.wps.cn, api.termius.com, biz.caiyunapp.com, api.vuevideo.net, api.picsart.c*, api.meiease.c*, api.rr.tv, api.interpreter.caiyunai.com, buy.itunes.apple.com, photos.adobe.io, license.pdfexpert.com, commerce-i18n-api, faceu.mobi, commerce-api.faceu.mobi, mobile-api.adguard.com, api.revenuecat.com, education.github.com, backend.getdrafts.com, lcs-mobile-cops.adobe.io, *.rr.tv, note.youdao.com, baimiao.uzero.cn
