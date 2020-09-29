@@ -4,7 +4,6 @@ payload:
   - DOMAIN-SUFFIX,onedrive.com
   - DOMAIN-SUFFIX,storage.live.com
   - DOMAIN,oneclient.sfx.ms
-  
   - DOMAIN-SUFFIX,azure.com
   - DOMAIN-SUFFIX,fabric.io
   - DOMAIN-SUFFIX,files.1drv.com
