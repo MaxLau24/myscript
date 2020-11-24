@@ -3,10 +3,10 @@
  * hostname = biz.caiyunapp.com
  * 
  * [Script]
- * cytq_SVIP = type=http-response,requires-body=1,max-size=0,pattern=https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user),script-path=cypro.js
+ * cytq_SVIP = type=http-response,requires-body=1,max-size=0,pattern=https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user),script-path=https://raw.githubusercontent.com/MaxLau24/myscript/master/Surge/Scripts/cypro.js
  * 
  * quanx
- * https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user) url script-response-body cypro.js
+ * https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user) url script-response-body https://raw.githubusercontent.com/MaxLau24/myscript/master/Surge/Scripts/cypro.js
  */
 
 const SCRIPT_NAME = '彩云天气';
