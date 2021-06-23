@@ -8,9 +8,9 @@
 
 [Script]
 
-csdn.res.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/elecV2/QuantumultX-Tools/master/betterweb/csdn.res.js,pattern=^https:\/\/blog\.csdn\.net\/,type=http-response
+csdn.res.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/MaxLau24/myscript/master/Surge/Module/CSDN/csdn.res.js,pattern=^https:\/\/blog\.csdn\.net\/,type=http-response
 
-csdn.req.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/elecV2/QuantumultX-Tools/master/betterweb/csdn.req.js,pattern=^https:\/\/wvhzpj\.openinstall\.io\/ulink,type=http-response
+csdn.req.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/MaxLau24/myscript/master/Surge/Module/CSDN/csdn.req.js,pattern=^https:\/\/wvhzpj\.openinstall\.io\/ulink,type=http-response
 
 
 [MITM]
