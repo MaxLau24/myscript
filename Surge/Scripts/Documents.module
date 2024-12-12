@@ -1,0 +1,8 @@
+#!name=Documents
+#!desc=Documents
+
+[Script]
+Documents = type=http-request, pattern=https://license.pdfexpert.com/api/2.0/documents/subscription/refresh, script-path=https://raw.githubusercontent.com/MaxLau24/myscript/refs/heads/master/Surge/Scripts/Documents.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% *.pdfexpert.com
